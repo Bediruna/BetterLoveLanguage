@@ -11,7 +11,7 @@
   let loveLanguageCounts = {};
   let sortedLoveLanguages = [];
   let totalSelections = 0;
-  let totalQuestions = 0;
+  let totalQuestions = 25;  // Only ask 25 questions
   let topLoveLanguage = null;
 
   // Mapping of love languages to Bootstrap color classes
@@ -52,54 +52,52 @@
 
       shuffleArray(scenarios);
 
-      // Set total questions to half the number of scenarios
-      totalQuestions = Math.floor(scenarios.length / 2);
-
       loadNextQuestion();
     } catch (error) {
       console.error("Error fetching data:", error);
     }
   });
 
-  // Load the next question
+  // Load the next question by selecting two scenarios of the same weight
   function loadNextQuestion() {
     if (questionIndex > totalQuestions || usedScenarioIds.size >= scenarios.length) {
       quizComplete = true;
       calculateResults();
     } else {
+      // Get available scenarios that haven't been used
       const availableScenarios = scenarios.filter((s) => !usedScenarioIds.has(s.id));
 
-      if (availableScenarios.length < 2) {
+      // Look for a pair of scenarios that share the same weight
+      let foundPair = false;
+      let scenarioPair = [];
+      for (let i = 0; i < availableScenarios.length; i++) {
+        const scenario1 = availableScenarios[i];
+        // Get all scenarios (other than scenario1) with the same weight
+        const sameWeightScenarios = availableScenarios.filter(
+          (s) => s.Weight === scenario1.Weight && s.id !== scenario1.id
+        );
+        if (sameWeightScenarios.length > 0) {
+          // Prefer a scenario with a different love language if possible
+          let scenario2 = sameWeightScenarios.find(s => s.Language !== scenario1.Language);
+          if (!scenario2) {
+            scenario2 = sameWeightScenarios[0];
+          }
+          scenarioPair = [scenario1, scenario2];
+          foundPair = true;
+          break;
+        }
+      }
+
+      if (!foundPair) {
         quizComplete = true;
         calculateResults();
         return;
       }
 
-      // Randomly select the first scenario
-      const scenario1Index = Math.floor(Math.random() * availableScenarios.length);
-      const scenario1 = availableScenarios[scenario1Index];
-
-      // Find a second scenario with a different love language
-      let scenario2 = availableScenarios.find(
-        (s, index) =>
-          index !== scenario1Index && s.Language !== scenario1.Language && !usedScenarioIds.has(s.id)
-      );
-
-      // If not found, select any other scenario
-      if (!scenario2) {
-        scenario2 = availableScenarios.find((s, index) => index !== scenario1Index);
-      }
-
-      if (!scenario2) {
-        quizComplete = true;
-        calculateResults();
-        return;
-      }
-
-      usedScenarioIds.add(scenario1.id);
-      usedScenarioIds.add(scenario2.id);
-
-      currentScenarios = [scenario1, scenario2];
+      // Mark both scenarios as used and update currentScenarios
+      usedScenarioIds.add(scenarioPair[0].id);
+      usedScenarioIds.add(scenarioPair[1].id);
+      currentScenarios = scenarioPair;
     }
   }
 
