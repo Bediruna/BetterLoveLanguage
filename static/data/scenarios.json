@@ -363,79 +363,79 @@
     },
     {
         "id": "62",
-        "Scenario": "my partner publicly acknowledges my achievements and unique qualities during a special gathering, making me feel truly appreciated",
+        "Scenario": "my partner publicly acknowledges my achievements and unique qualities during a special gathering",
         "Language": "Words of Affirmation",
         "Weight": 5
     },
     {
         "id": "63",
-        "Scenario": "my partner coordinates an entire day of household tasks by hiring professional help and taking care of all errands, ensuring I have a day of complete relaxation",
+        "Scenario": "my partner coordinates an entire day of household tasks by hiring professional help and taking care of all errands",
         "Language": "Acts of Service",
         "Weight": 5
     },
     {
         "id": "64",
-        "Scenario": "my partner surprises me by managing every aspect of our home maintenance for a week—from deep cleaning to meal prep—so I can focus entirely on my well-being",
+        "Scenario": "my partner surprises me by managing every aspect of our home maintenance for a week",
         "Language": "Acts of Service",
         "Weight": 5
     },
     {
         "id": "65",
-        "Scenario": "my partner envelops me in a long, warm embrace that conveys deep passion and unwavering support, making me feel profoundly connected and loved",
+        "Scenario": "my partner envelops me in a long, warm embrace that conveys deep passion",
         "Language": "Physical Touch",
         "Weight": 5
     },
     {
         "id": "66",
-        "Scenario": "my partner initiates an affectionate ritual of lingering caresses and tender massages that leave me feeling cherished and secure in our bond",
+        "Scenario": "my partner initiates an affectionate ritual of lingering caresses and tender massages",
         "Language": "Physical Touch",
         "Weight": 5
     },
     {
         "id": "67",
-        "Scenario": "my partner holds me in a tender, lingering embrace that radiates warmth and reassurance during our quiet evening together",
+        "Scenario": "my partner holds me in a tender, lingering embrace",
         "Language": "Physical Touch",
         "Weight": 4
     },
     {
         "id": "68",
-        "Scenario": "my partner surprises me with a gentle, yet intimate, caress that evolves into a prolonged, loving hug, making me feel profoundly cared for",
+        "Scenario": "my partner surprises me with a gentle, yet intimate, caress that evolves into a prolonged, loving hug",
         "Language": "Physical Touch",
         "Weight": 4
     },
     {
         "id": "69",
-        "Scenario": "my partner takes a moment out of their busy schedule to enjoy a quiet coffee break with me, cherishing a small slice of our day together",
+        "Scenario": "my partner takes a moment out of their busy schedule to enjoy a quiet coffee break with me",
         "Language": "Quality Time",
         "Weight": 2
     },
     {
         "id": "70",
-        "Scenario": "my partner suggests a short evening walk after dinner, giving us a chance to connect and unwind together in the calm of the night",
+        "Scenario": "my partner suggests a short evening walk after dinner, giving us a chance to connect and unwind together",
         "Language": "Quality Time",
         "Weight": 2
     },
     {
         "id": "71",
-        "Scenario": "my partner preps a quick meal or snack for me during a busy afternoon, making sure I have something nourishing without having to ask",
+        "Scenario": "my partner preps a quick meal or snack for me during a busy afternoon",
         "Language": "Acts of Service",
         "Weight": 2
     },
     {
         "id": "72",
-        "Scenario": "my partner takes a moment to tidy up my workspace and organize a few loose items, subtly lightening my load during a hectic day",
+        "Scenario": "my partner takes a moment to tidy up my workspace and organize a few loose items",
         "Language": "Acts of Service",
         "Weight": 2
     },
     {
         "id": "73",
-        "Scenario": "my partner surprises me with a small potted succulent that adds a refreshing touch to my workspace, brightening my day unexpectedly",
+        "Scenario": "my partner surprises me with a small potted succulent that adds a refreshing touch to my workspace",
         "Language": "Receiving Gifts",
         "Weight": 2
     },
     {
         "id": "74",
-        "Scenario": "my partner brings me a charming, handpicked bookmark that reflects my interests and serves as a subtle reminder of their affection",
+        "Scenario": "my partner brings me a charming, handpicked bookmark that reflects my interests",
         "Language": "Receiving Gifts",
         "Weight": 2
     }
