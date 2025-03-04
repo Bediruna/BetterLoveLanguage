@@ -381,7 +381,7 @@
     },
     {
         "id": "65",
-        "Scenario": "my partner envelops me in a long, warm embrace that conveys deep passion",
+        "Scenario": "my partner envelops me in a long, warm embrace",
         "Language": "Physical Touch",
         "Weight": 5
     },
@@ -399,7 +399,7 @@
     },
     {
         "id": "68",
-        "Scenario": "my partner surprises me with a gentle, yet intimate, caress that evolves into a prolonged, loving hug",
+        "Scenario": "my partner surprises me with a gentle, yet intimate hug",
         "Language": "Physical Touch",
         "Weight": 4
     },
@@ -429,7 +429,7 @@
     },
     {
         "id": "73",
-        "Scenario": "my partner surprises me with a small potted succulent that adds a refreshing touch to my workspace",
+        "Scenario": "my partner surprises me with a small potted succulent",
         "Language": "Receiving Gifts",
         "Weight": 2
     },
