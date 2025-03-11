@@ -1,5 +1,6 @@
 <script>
   import { onMount } from "svelte";
+  import GitHubIcon from "../components/GitHubIcon.svelte";
 
   let scenarios = [];
   let descriptions = [];
@@ -11,7 +12,7 @@
   let loveLanguageCounts = {};
   let sortedLoveLanguages = [];
   let totalSelections = 0;
-  let totalQuestions = 25;  // Only ask 25 questions
+  let totalQuestions = 25; // Only ask 25 questions
   let topLoveLanguage = null;
 
   // Mapping of love languages to Bootstrap color classes
@@ -20,7 +21,7 @@
     "Acts of Service": "bg-success",
     "Receiving Gifts": "bg-info",
     "Quality Time": "bg-warning",
-    "Physical Touch": "bg-danger"
+    "Physical Touch": "bg-danger",
   };
 
   // Function to get the Bootstrap color class for a love language
@@ -60,12 +61,17 @@
 
   // Load the next question by selecting two scenarios of the same weight
   function loadNextQuestion() {
-    if (questionIndex > totalQuestions || usedScenarioIds.size >= scenarios.length) {
+    if (
+      questionIndex > totalQuestions ||
+      usedScenarioIds.size >= scenarios.length
+    ) {
       quizComplete = true;
       calculateResults();
     } else {
       // Get available scenarios that haven't been used
-      const availableScenarios = scenarios.filter((s) => !usedScenarioIds.has(s.id));
+      const availableScenarios = scenarios.filter(
+        (s) => !usedScenarioIds.has(s.id),
+      );
 
       // Look for a pair of scenarios that share the same weight
       let foundPair = false;
@@ -74,11 +80,13 @@
         const scenario1 = availableScenarios[i];
         // Get all scenarios (other than scenario1) with the same weight
         const sameWeightScenarios = availableScenarios.filter(
-          (s) => s.Weight === scenario1.Weight && s.id !== scenario1.id
+          (s) => s.Weight === scenario1.Weight && s.id !== scenario1.id,
         );
         if (sameWeightScenarios.length > 0) {
           // Prefer a scenario with a different love language if possible
-          let scenario2 = sameWeightScenarios.find(s => s.Language !== scenario1.Language);
+          let scenario2 = sameWeightScenarios.find(
+            (s) => s.Language !== scenario1.Language,
+          );
           if (!scenario2) {
             scenario2 = sameWeightScenarios[0];
           }
@@ -122,7 +130,9 @@
 
     // Convert counts to percentages
     for (let language in loveLanguageCounts) {
-      const percentage = Math.round((loveLanguageCounts[language] / totalSelections) * 100);
+      const percentage = Math.round(
+        (loveLanguageCounts[language] / totalSelections) * 100,
+      );
       loveLanguageCounts[language] = percentage;
 
       if (percentage > maxPercentage) {
@@ -132,7 +142,9 @@
     }
 
     // Create a sorted array of love languages based on percentages
-    sortedLoveLanguages = Object.entries(loveLanguageCounts).sort((a, b) => b[1] - a[1]);
+    sortedLoveLanguages = Object.entries(loveLanguageCounts).sort(
+      (a, b) => b[1] - a[1],
+    );
   }
 
   // Retrieve love language description
@@ -177,7 +189,7 @@
               class="progress-bar {getProgressBarClass(language)}"
               role="progressbar"
               style="width: {percentage}%"
-              aria-valuenow="{percentage}"
+              aria-valuenow={percentage}
               aria-valuemin="0"
               aria-valuemax="100"
             ></div>
@@ -188,12 +200,26 @@
 
     {#if topLoveLanguage}
       <div class="top-love-language mt-4 p-3">
-        <h2 class="text-center">Your top love language is: <strong>{topLoveLanguage}</strong></h2>
+        <h2 class="text-center">
+          Your top love language is: <strong>{topLoveLanguage}</strong>
+        </h2>
         {#if getLoveLanguageDescription(topLoveLanguage)}
-          <p><strong>Description:</strong> {getLoveLanguageDescription(topLoveLanguage).description}</p>
-          <p><strong>How to Communicate:</strong> {getLoveLanguageDescription(topLoveLanguage).howToCommunicate}</p>
-          <p><strong>Actions to Take:</strong> {getLoveLanguageDescription(topLoveLanguage).actionsToTake}</p>
-          <p><strong>Things to Avoid:</strong> {getLoveLanguageDescription(topLoveLanguage).thingsToAvoid}</p>
+          <p>
+            <strong>Description:</strong>
+            {getLoveLanguageDescription(topLoveLanguage).description}
+          </p>
+          <p>
+            <strong>How to Communicate:</strong>
+            {getLoveLanguageDescription(topLoveLanguage).howToCommunicate}
+          </p>
+          <p>
+            <strong>Actions to Take:</strong>
+            {getLoveLanguageDescription(topLoveLanguage).actionsToTake}
+          </p>
+          <p>
+            <strong>Things to Avoid:</strong>
+            {getLoveLanguageDescription(topLoveLanguage).thingsToAvoid}
+          </p>
         {/if}
       </div>
     {/if}
@@ -201,6 +227,11 @@
     <p class="text-center">Loading...</p>
   {/if}
 </main>
+<footer class="footer-text">
+  <a href="https://github.com/Bediruna/better-love-language" target="_blank">
+    <GitHubIcon />
+  </a>
+</footer>
 
 <style>
   .quiz-container {
