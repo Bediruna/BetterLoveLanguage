@@ -153,22 +153,23 @@
   }
 </script>
 
-<main class="container mt-5">
+<main class="container">
   {#if !quizComplete && currentScenarios.length === 2}
-    <h1 class="text-center mb-4">I feel most loved when:</h1>
-    <p class="text-center">Question {questionIndex} of {totalQuestions}</p>
-    <div class="quiz-container row justify-content-center">
-      <div class="col-12 col-md-6 mb-3 d-flex justify-content-center">
+    <div class="quiz-content">
+      <h1 class="text-center mb-4">I feel most loved when:</h1>
+      <p class="text-center">Question {questionIndex} of {totalQuestions}</p>
+
+      <!-- Fixed width buttons container -->
+      <div class="quiz-buttons-container">
         <button
-          class="btn btn-primary btn-lg w-100 equal-height"
+          class="btn btn-primary btn-lg quiz-button"
           on:click={() => selectScenario(currentScenarios[0])}
         >
           {currentScenarios[0].Scenario}
         </button>
-      </div>
-      <div class="col-12 col-md-6 d-flex justify-content-center">
+
         <button
-          class="btn btn-secondary btn-lg w-100 equal-height"
+          class="btn btn-secondary btn-lg quiz-button"
           on:click={() => selectScenario(currentScenarios[1])}
         >
           {currentScenarios[1].Scenario}
@@ -176,7 +177,10 @@
       </div>
     </div>
   {:else if quizComplete}
-    <p class="text-center">You've completed the quiz! Here are your results:</p>
+    <br />
+    <h4 class="text-center">
+      You've completed the quiz! Here are your results:
+    </h4>
     <div class="progress-container mt-4">
       {#each sortedLoveLanguages as [language, percentage]}
         <div class="mb-4">
@@ -237,14 +241,33 @@
   .quiz-container {
     margin-top: 20px;
   }
-  .equal-height {
-    height: 120px;
+
+  /* New button container styling */
+  .quiz-buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 800px; /* Increased from 600px to allow wider buttons */
+    margin: 0 auto;
   }
-  button {
+
+  /* Button styling */
+  .quiz-button {
+    width: 100%;
+    min-height: 120px; /* Changed from fixed height to minimum height */
+    height: auto; /* Allow the height to grow */
     padding: 15px;
     font-size: 18px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    white-space: normal; /* Ensure text wraps */
+    word-wrap: break-word; /* Better handling of long words */
   }
+
   .footer-text {
     position: fixed;
     bottom: 10px;
@@ -252,21 +275,47 @@
     font-size: 14px;
     color: #555;
   }
+
   .top-love-language {
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 20px;
   }
+
   .progress-container {
     max-width: 600px;
     margin: 0 auto;
   }
+
   .progress {
     height: 25px;
   }
+
   .progress-bar {
     font-weight: bold;
     line-height: 25px;
+  }
+
+  /* Quiz content styling */
+  .quiz-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    width: 100%;
+  }
+
+  /* Media query for larger screens */
+  @media (min-width: 768px) {
+    .quiz-buttons-container {
+      flex-direction: row;
+      max-width: 800px; /* Increased container width */
+    }
+
+    .quiz-button {
+      width: 380px; /* Increased fixed width for buttons on larger screens */
+    }
   }
 </style>
