@@ -156,7 +156,7 @@
 <main class="container">
   {#if !quizComplete && currentScenarios.length === 2}
     <div class="quiz-content">
-      <h1 class="text-center mb-4">I feel most loved when:</h1>
+      <h1 class="text-center mb-4">I feel most loved when...</h1>
       <p class="text-center">Question {questionIndex} of {totalQuestions}</p>
 
       <!-- Fixed width buttons container -->
