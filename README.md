@@ -8,20 +8,14 @@ I created this project because I wanted a straightforward way to take the Love L
 
 The quiz presents users with a series of scenarios, asking them to choose the option that best resonates with them. Each selection contributes to a tally for a specific love language.
 
-**Please Note:** The quiz scenarios and questions were primarily written with the assistance of AI. The results are intended for entertainment and self-reflection and should not be taken as professional psychological advice.
-
-## Features
-
-* **Free to Use:** No costs, no hidden fees.
-* **Ad-Free:** Enjoy the quiz without interruptions.
-* **Privacy-Respecting:** No personal information is collected.
-* **Simple Interface:** Easy to navigate and take the quiz.
-* **Clear Results:** See a tally of your responses for each love language.
+**Please Note:** The quiz scenarios and questions are intended for casual self-exploration and entertainment purposes only. The results may not be a definitive or professionally accurate assessment of your love language.
 
 ## Contributing
 
 This is a small personal project, but feel free to explore the code. If you have suggestions for improvements or find any issues, please open an issue or submit a pull request.
 
-## Disclaimer
+## Quiz
+![image](https://github.com/user-attachments/assets/7ed2717f-433c-40eb-a7ae-ec76b064df9d)
 
-The scenarios and results of this quiz were generated with the assistance of Artificial Intelligence and are intended for casual self-exploration and entertainment purposes only. The results may not be a definitive or professionally accurate assessment of your love language.
+## Results
+![image](https://github.com/user-attachments/assets/30f68773-c25f-4864-a259-0e319689695b)
