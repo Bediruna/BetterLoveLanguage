@@ -14,8 +14,9 @@ The quiz presents users with a series of scenarios, asking them to choose the op
 
 This is a small personal project, but feel free to explore the code. If you have suggestions for improvements or find any issues, please open an issue or submit a pull request.
 
-## Quiz
-![image](https://github.com/user-attachments/assets/7ed2717f-433c-40eb-a7ae-ec76b064df9d)
+## Quiz Screen
+![image](https://github.com/user-attachments/assets/089bdd3b-f812-49e3-93ae-a3e05d511e08)
 
-## Results
-![image](https://github.com/user-attachments/assets/30f68773-c25f-4864-a259-0e319689695b)
+## Results Screen
+![image](https://github.com/user-attachments/assets/6cfd4c62-1f68-4ae9-a93a-2c78bf005e46)
+
