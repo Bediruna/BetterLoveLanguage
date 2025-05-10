@@ -20,3 +20,5 @@ This is a small personal project, but feel free to explore the code. If you have
 ## Results Screen
 ![image](https://github.com/user-attachments/assets/6cfd4c62-1f68-4ae9-a93a-2c78bf005e46)
 
+## Support Me
+<a href="https://buymeacoffee.com/bediruna" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
